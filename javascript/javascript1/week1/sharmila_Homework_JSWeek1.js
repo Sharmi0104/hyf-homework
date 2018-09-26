@@ -17,6 +17,7 @@ let favAnimal=["Dog","Cat","Elephant","Monkey","Bear"];
 console.log(favAnimal);
 
 favAnimal.push("baby pig");
+favAnimal.push("puppy");
 console.log(favAnimal);
 
 //Length of string
