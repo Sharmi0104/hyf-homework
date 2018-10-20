@@ -1,0 +1,35 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: rgb(201, 198, 193);
+  }
+  h2{
+    text-align: center;
+    margin:0;
+    padding:20px;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 6px;
+    font-size: 40px;
+    color:#fff;
+  }
+  img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top:5px;
+    left:20px;
+  }
+.alignrow{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+
+}
+.aligncol{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
