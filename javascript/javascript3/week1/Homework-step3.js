@@ -24,7 +24,7 @@ fetch('https://api.github.com/orgs/HackYourFuture-CPH/repos')
     data.map(function (x){
       count = count + x.forks; 
       console.log(x.contributors_url);
-      forkDIv.innerHTML=`<div class="aligncol">Total Forked repository:${count}</div>`
+      forkDIv.innerHTML=`<div class="aligncol4">Total Forked repository:${count}</div>`
         titleDiv.innerHTML += `<br>
         
         <br>
@@ -53,19 +53,15 @@ function leastFork()
 
   var res= Math.min.apply(Math,data.map(function(o)
   {
-   // console.log(o.name +':' +o.forks);
-  // titleDiv.innerHTML +=  o.forks;
+   
   return o.forks;
     }))
    data.filter(function(x){
-      //  data.find(function(o)
-       // { 
-            //console.log(x.forks.length);
+     
              if(x.forks == res){
                 return x.name
             }; 
-       // })
-     //  console.log(obj[0].forks);
+      
     }).map(function(strObj)
     {
       titleDiv.innerHTML +=`<ul>
@@ -90,19 +86,15 @@ function mostWatch()
   forkDIv.innerHTML="";
   var res= Math.max.apply(Math,data.map(function(o)
   {
-   // console.log(o.name +':' +o.forks);
-  // titleDiv.innerHTML +=  o.forks;
+   
   return o.watchers;
     }))
    data.filter(function(x){
-      //  data.find(function(o)
-       // { 
-            //console.log(x.forks.length);
+      
              if(x.watchers == res){
                 return x.name
             }; 
-       // })
-     //  console.log(obj[0].forks);
+      
     }).map(function(strObj)
     {
       titleDiv.innerHTML += `<div class="aligncol">${strObj.name}</div>`
@@ -143,10 +135,9 @@ function Contributors()
 }
 function getContributorCount(getCount,getName)
 {
- // console.log(getCount);
+ 
   fetch(getCount, {
-    method: 'get', // or 'PUT'
-    //body: JSON.stringify(data), // data can be `string` or {object}!
+    method: 'get',    
     headers:{
       'Content-Type': 'application/json'
     }
@@ -154,7 +145,6 @@ function getContributorCount(getCount,getName)
   .then((res)=>{return res.json()})
   
   .then((data) => {
-   // console.log(data);
     titleDiv.innerHTML="";
     forkDIv.innerHTML="";
       titleDiv.hidden=false;
