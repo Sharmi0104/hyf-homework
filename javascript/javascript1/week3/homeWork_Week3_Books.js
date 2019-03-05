@@ -59,7 +59,7 @@ const bookDetails=[
        language:"English"
     },
     {
-        id:favbook[19],
+        id:favbook[9],
         title:"The Lost Continent",
         author:"Bill Bryson",
        language:"English"
