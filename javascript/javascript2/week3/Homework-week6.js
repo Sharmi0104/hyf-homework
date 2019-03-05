@@ -45,7 +45,7 @@ function searchRepo()
       <div class="aligncol" >
       <ul>
       <li> 
-      <a href='https://api.github.com/repos/HackYourFuture/${x.contributors_url}' target="_blank">${x.contributors_url}</a>
+      <a href='https://api.github.com/repos/HackYourFuture/${x.contributors_url}' onclick="makeRequest(this.href);" target="_blank">${x.contributors_url}</a>
       </li>
       </ul>
       </div>
@@ -60,4 +60,8 @@ else{
   alert('Please enter search text');
 }
 
+}
+function makeRequest(strurl)
+{
+  alert(strurl);
 }
