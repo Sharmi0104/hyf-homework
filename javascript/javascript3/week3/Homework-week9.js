@@ -45,6 +45,7 @@ function loadAllMovies(getdata) {
         .then(res => res.json())
         .then(movies => {
             document.getElementById("btnAll").addEventListener("click", MoviesGet)
+            
             function MoviesGet() {
                 let Allmovies = movies
                     .map((good) => {
@@ -62,6 +63,7 @@ function loadAllMovies(getdata) {
 
                         //return Allmovies;
                     })
+
             }
             document.getElementById("btnGood").addEventListener("click", MoviesGood)
             function MoviesGood() {
@@ -108,7 +110,17 @@ function loadAllMovies(getdata) {
                 })
             }
             document.getElementById("btnBad").addEventListener("click", MoviesBad)
+            document.getElementById("ddlsortBy").addEventListener("change", sortBy)
+            function sortBy(ddlValue){
+                var ddlValue=document.getElementById("ddlsortBy").value;
+                return ddlValue;
+            }
             function MoviesBad() {
+                
+                document.getElementById("ddlsortBy").addEventListener("change", sortBy(ddlValue))
+
+                alert(ddlValue);
+           
                 let Bmovies = movies
                     .filter((MBad) => {
                         return MBad.rating < 4;
@@ -128,6 +140,7 @@ function loadAllMovies(getdata) {
 
 
                 })
+                
             }
             document.getElementById("btnSearch").addEventListener("click", loadGoodMovies)
             function loadGoodMovies() {
@@ -225,9 +238,9 @@ function loadAllMovies(getdata) {
                             loadGood.hidden = true;
                             loadMovies.hidden = false;
                             loadMovies.innerHTML += `<div class="alignRowDiv">
-                                                    <div class="aligncol1">${movieBad.title}</div>
-                                                    <div class="aligncol1">${movieBad.rating}</div>
-                                                    <div class="aligncol3"><button class="btn btn-success" onclick="getPoster('${movieBad.title}');">Get Poster</button></div>
+                                                    <td class="aligncol1">${movieBad.title}</td>
+                                                    <td class="aligncol1">${movieBad.rating}</td>
+                                                    <td class="aligncol3"><button class="btn btn-success" onclick="getPoster('${movieBad.title}');">Get Poster</button></td>
                                                 </div>`
 
                         }
